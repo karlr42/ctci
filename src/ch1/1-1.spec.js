@@ -8,7 +8,8 @@ for (let fName in app) {
 		// unique input
 		[
 			"abcdefghi",
-			"AaBbCcDdeFg1234567890(*&^%$#@!)"
+			"AaBbCcDdeFg1234567890(*&^%$#@!)",
+			"a"
 		].forEach(arg => {
 			it("return true for strs with unique chars", function() {
 				assert.equal(true, func(arg));
@@ -19,7 +20,8 @@ for (let fName in app) {
 		[
 			"aaa",
 			"abcdefghii",
-			"AaBbbCcDdeFg1234567890(*&^%$#@!)"
+			"AaBbbCcDdeFg1234567890(*&^%$#@!)",
+			"aa"
 		].forEach(arg => {
 			it("return false for strs with duplicate chars", function() {
 				assert.equal(false, func(arg));
