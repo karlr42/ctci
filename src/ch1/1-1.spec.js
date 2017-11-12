@@ -1,14 +1,17 @@
 var app = require("./1-1.js");
 
-describe("1-1", function() {
-	describe("isUnique", function() {
+
+for (let fName in app) {
+	let func = app[fName];
+
+	describe("1-1 "+fName, function() {
 		// unique input
 		[
 			"abcdefghi",
 			"AaBbCcDdeFg1234567890(*&^%$#@!)"
 		].forEach(arg => {
 			it("return true for strs with unique chars", function() {
-				assert.equal(true, app.isUnique(arg));
+				assert.equal(true, func(arg));
 			});
 		});
 
@@ -19,9 +22,9 @@ describe("1-1", function() {
 			"AaBbbCcDdeFg1234567890(*&^%$#@!)"
 		].forEach(arg => {
 			it("return false for strs with duplicate chars", function() {
-				assert.equal(false, app.isUnique(arg));
+				assert.equal(false, func(arg));
 			});
 		});
 	});
-});
+}
 
