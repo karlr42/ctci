@@ -2,7 +2,6 @@ var urlifyInPlace = function(str, len){
 	var numSpaces = Math.floor((str.length - len) / 2);
 	str = str.split("");
 	for(var i = len-1, j = str.length-1; numSpaces > 0; i--){
-		if(!str[i] || !str[j]) break;
 		if(str[i] !== " "){
 			// swap
 			str[j] = str[i];
