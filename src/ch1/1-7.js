@@ -6,10 +6,10 @@ var rotateMatrix = function (matrix, n){
 	for(var i = 0 ; i < n; i++){
 		// row-by-row transpose
 		for(var j = i+1; j < n; j++){
-			// diaognally swap 
+			// diagonally swap 
 			let temp = matrix[i][j];
-      		matrix[i][j] = matrix[j][i];
-      		matrix[j][i] = temp;
+			matrix[i][j] = matrix[j][i];
+			matrix[j][i] = temp;
 		}
 	}
 	// swap leftmost row cells with rightmost cells
