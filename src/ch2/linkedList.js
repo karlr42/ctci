@@ -31,4 +31,13 @@ let linkedListToArray = function(node){
 	return arr;
 };
 
-module.exports = {createNode, createLinkedList, arrayToLinkedList, linkedListToArray};
+let getLength = function(list){
+	var node = list, len = 0;
+	while(node != null){
+		len++;
+		node = node.next;
+	}
+	return len;
+};
+
+module.exports = {createNode, createLinkedList, arrayToLinkedList, linkedListToArray, getLength};
