@@ -30,7 +30,6 @@ for (let fName in app) {
 		].forEach(arg => {
 			it("partitions linked list", function() {
 				var res = linkedList.linkedListToArray(func(linkedList.arrayToLinkedList(arg.list), arg.part));
-				console.log(res);
 				var jumps = 0;
 				for(let i = 0; i < res.length-2; i++){
 					if(res[i+1] > res[i] && (res[i] < arg.part && res[i+1] >= arg.part)) jumps++;
