@@ -35,7 +35,7 @@ for (let fName in app) {
 				for(let i = 0; i < res.length-2; i++){
 					if(res[i+1] > res[i] && (res[i] < arg.part && res[i+1] >= arg.part)) jumps++;
 				}
-				assert.equal(true, jumps < 2);
+				assert.equal(true, res.length == arg.list.length && jumps < 2);
 			});
 		});
 
