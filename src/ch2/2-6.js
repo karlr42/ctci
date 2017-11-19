@@ -1,16 +1,18 @@
-let isPalindrome = function(list){
+let isPalindromeOddElemCount = function(list){
 	var map = {};
-	var node = list;
-	while(node != null){
+	for(var node = list; node != null; node = node.next){
 		var v = node.val;
-		if(!v.match(/[^a-zA-Z]/)){ 
-			// case-insenstive, ignore non-alpha
-			v = v.toLowerCase();
-			map[v] = map[v] ? map[v] + 1 : 1;
+		if(typeof v == "string"){
+			// pre-process string vals
+			if(v.match(/[^a-zA-Z]/)){
+				continue;
+			}else{
+				v = v.toLowerCase();
+			}
 		}
-		node = node.next;
+		map[v] = map[v] ? map[v] + 1 : 1;
 	}
-	// a palindrome can have at most one character with an even count
+	// a palindrome can have at most one element with an odd count
 	var oddCount = 0;
 	for(let charCount of Object.values(map)){
 		if(charCount % 2 != 0) oddCount++;
@@ -18,4 +20,4 @@ let isPalindrome = function(list){
 	return oddCount < 2;
 };
 
-module.exports = {isPalindrome};
+module.exports = {isPalindromeOddElemCount};
