@@ -38,7 +38,7 @@ describe("2-5 A", function() {
 });
 
 for(let func of [app["sumListsForward"], app["sumListsForwardStrParsing"]]){
-	describe("2-5 B", function() {
+	describe("2-5 B "+func.name, function() {
 		[
 			{
 				a : [6,1,7],
